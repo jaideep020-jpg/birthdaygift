@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0c10">
+<title>A Birthday Surprise ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#d6b77b;
+  --ivory:#f8f1e6;
+  --muted:#c5b9aa;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  min-height:100svh;
+  background:radial-gradient(ellipse at 50% 15%,
+    #29231d 0%,#131316 48%,#08090c 100%);
+  color:var(--ivory);
+  font-family:'DM Sans',sans-serif;
+}
+.shell {
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:35px 18px;
+}
+.panel {
+  width:100%;
+  max-width:530px;
+  padding:clamp(35px,7vw,62px) 24px;
+  text-align:center;
+  border:1px solid #d6b77b45;
+  border-radius:4px;
+  background:linear-gradient(145deg,#ffffff0b,#ffffff02);
+  box-shadow:0 30px 100px #0009;
+  backdrop-filter:blur(16px);
+  position:relative;
+  z-index:2;
+}
+.panel::before,.panel::after {
+  content:"✦";
+  position:absolute;
+  color:var(--gold);
+  font-size:14px;
+}
+.panel::before {top:15px;left:17px;}
+.panel::after {bottom:15px;right:17px;}
+.eyebrow {
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:600;
+  line-height:1.8;
+}
+.ornament {
+  color:var(--gold);
+  font-size:42px;
+  margin:26px 0;
+  text-shadow:0 0 40px #d6b77b90;
+}
+h1 {
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:400;
+  font-size:clamp(39px,9vw,59px);
+  line-height:1.17;
+  letter-spacing:-1.3px;
+  margin:18px 0;
+}
+h1 em {color:var(--gold);}
+.line {
+  width:65px;
+  height:1px;
+  margin:27px auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+p {
+  color:#d4cabe;
+  font-size:14px;
+  line-height:2;
+  max-width:390px;
+  margin:0 auto;
+}
+.highlight {color:#f1d9a2;}
+button {
+  font-family:'DM Sans',sans-serif;
+  cursor:pointer;
+  transition:transform .25s,box-shadow .25s;
+}
+button:hover {transform:translateY(-3px);}
+button:focus-visible {
+  outline:2px solid white;
+  outline-offset:4px;
+}
+.main-btn {
+  margin-top:34px;
+  background:linear-gradient(115deg,#b99a61,#f1d9a2,#b99a61);
+  color:#1b1712;
+  border:0;
+  min-height:53px;
+  padding:0 27px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+}
+.main-btn:hover {box-shadow:0 10px 35px #d6b77b40;}
+.footer {
+  margin-top:32px;
+  color:#9c8d79;
+  font-size:10px;
+  letter-spacing:1.6px;
+  line-height:1.8;
+}
+.page {display:none;}
+.page.active {display:block;animation:enter .8s ease both;}
+@keyframes enter {
+  from {opacity:0;transform:translateY(18px);}
+  to {opacity:1;transform:translateY(0);}
+}
+.options {
+  display:grid;
+  gap:12px;
+  margin:30px auto 0;
+  max-width:370px;
+}
+.option {
+  background:#ffffff07;
+  border:1px solid #d6b77b55;
+  color:var(--ivory);
+  padding:19px 15px;
+  text-align:left;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  border-radius:3px;
+}
+.option:hover {
+  background:#d6b77b18;
+  border-color:var(--gold);
+  box-shadow:0 8px 25px #0005;
+}
+.option .symbol {
+  font-size:25px;
+  min-width:34px;
+  text-align:center;
+}
+.option strong {
+  display:block;
+  color:var(--gold);
+  font-size:14px;
+  font-weight:500;
+  margin-bottom:5px;
+}
+.option small {
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.6;
+}
+.particle {
+  position:fixed;
+  width:3px;
+  height:3px;
+  background:var(--gold);
+  border-radius:50%;
+  pointer-events:none;
+  animation:drift linear forwards;
+  box-shadow:0 0 12px var(--gold);
+}
+@keyframes drift {
+  from {transform:translateY(0);opacity:0;}
+  20% {opacity:.8;}
+  to {transform:translateY(-110vh);opacity:0;}
+}
+@media(max-width:420px) {
+  .panel {padding:40px 20px;}
+  p {font-size:13px;}
+  .eyebrow {letter-spacing:2px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<main class="panel">
+
+<!-- PAGE ONE -->
+<section id="one" class="page active">
+  <div class="eyebrow">A Special Day · A Special Someone</div>
+  <div class="ornament">✧</div>
+  <h1>Happy Birthday,<br><em>Beautiful.</em></h1>
+  <div class="line"></div>
+  <p>
+    Wishing you a birthday filled with
+    happiness, laughter, and all the little
+    things that make you smile.
+    <br><br>
+    I hope this year brings you everything
+    your heart has been wishing for,
+    and a few beautiful surprises
+    you never saw coming.
+    <br><br>
+    May your days be filled with love,
+    your dreams become reality,
+    and that pretty smile never fade.
+    <br><br>
+    Speaking of surprises...
+    <br><br>
+    <span class="highlight">
+      I have a little birthday gift for you.
+      But there's a catch...
+      <br>
+      You get to choose it yourself. ♡
+    </span>
+  </p>
+  <button class="main-btn" onclick="go('two')">
+    See Your Gift Options ✦
+  </button>
+  <div class="footer">YOUR DAY · YOUR WISH</div>
+</section>
+
+<!-- PAGE TWO -->
+<section id="two" class="page">
+  <div class="eyebrow">Chapter Two · Your Choice</div>
+  <div class="ornament">✧</div>
+  <h1>Choose Your<br><em>Gift.</em></h1>
+  <div class="line"></div>
+  <p>
+    Alright, birthday girl...
+    <br>
+    You have four options.
+    <br><br>
+    <span class="highlight">
+      Choose wisely. Some gifts might
+      come with a little extra surprise. 😉
+    </span>
+  </p>
+
+  <div class="options">
+    <button class="option" onclick="choose('My Time')">
+      <span class="symbol">⌛</span>
+      <span>
+        <strong>Option One · My Time</strong>
+        <small>Some moments are worth sharing.</small>
+      </span>
+    </button>
+
+    <button class="option" onclick="choose('My Attention')">
+      <span class="symbol">✧</span>
+      <span>
+        <strong>Option Two · My Attention</strong>
+        <small>Someone who actually listens to you.</small>
+      </span>
+    </button>
+
+    <button class="option" onclick="choose('My Heart')">
+      <span class="symbol">♡</span>
+      <span>
+        <strong>Option Three · My Heart</strong>
+        <small>A slightly dangerous choice, I'd say.</small>
+      </span>
+    </button>
+
+    <button class="option" onclick="choose('Kuch Bhi Chalega')">
+      <span class="symbol">🎁</span>
+      <span>
+        <strong>Option Four · Surprise Me</strong>
+        <small>Kuch bhi chalega? Let's find out.</small>
+      </span>
+    </button>
+  </div>
+  <div class="footer">TAP ONE TO REVEAL YOUR GIFT</div>
+</section>
+
+<!-- PAGE THREE -->
+<section id="three" class="page">
+  <div class="eyebrow">The Final Chapter · Just For You</div>
+  <div class="ornament">♡</div>
+  <h1>Kuch Bhi<br><em>Chalega?</em></h1>
+  <div class="line"></div>
+
+  <p id="selection"></p>
+
+  <p>
+    Since we couldn't meet this time,
+    I couldn't give you the birthday
+    surprise I would've wanted to.
+    <br><br>
+    So for now, the only things
+    I can give you are...
+    <br><br>
+    <span class="highlight">
+      My time, whenever you need it.
+      <br><br>
+      My attention, even when
+      you don't ask for it.
+      <br><br>
+      My loyalty, without you
+      ever having to question it.
+      <br><br>
+      And maybe a little piece of my heart,
+      if you know what to do with it. ♡
+    </span>
+    <br><br>
+    I know it's not a gift wrapped
+    in a pretty box,
+    but I'd say it's a pretty good deal.
+    <br><br>
+    And who knows...
+    <br><br>
+    <span class="highlight">
+      Maybe I'll even take you on a date
+      someday, if you play your cards right. 😉
+    </span>
+    <br><br>
+    Until then, keep that pretty
+    smile on your face.
+    <br><br>
+    Happy Birthday, Beautiful. ❤️
+  </p>
+  <button class="main-btn" onclick="go('one')">
+    Experience It Again ↺
+  </button>
+  <div class="footer">SOME GIFTS DON'T COME IN BOXES</div>
+</section>
+
+</main>
+</div>
+
+<script>
+function go(id) {
+  document.querySelectorAll('.page').forEach(
+    p => p.classList.remove('active')
+  );
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function choose(gift) {
+  const selection = document.getElementById('selection');
+  selection.textContent =
+    gift === 'Kuch Bhi Chalega'
+      ? 'Anything? Well, I like your confidence. 😉'
+      : 'You chose ' + gift +
+        '? Nice choice. But why settle for just one? 😉';
+  selection.style.marginBottom = '26px';
+  selection.style.color = '#f1d9a2';
+  go('three');
+}
+
+function particle() {
+  const p = document.createElement('span');
+  p.className = 'particle';
+  p.style.left = Math.random()*100+'vw';
+  p.style.bottom = '-5px';
+  p.style.animationDuration=(5+Math.random()*6)+'s';
+  document.body.appendChild(p);
+  p.addEventListener('animationend',()=>p.remove());
+}
+if (!window.matchMedia(
+  '(prefers-reduced-motion:reduce)'
+).matches) {
+  setInterval(particle,350);
+}
+</script>
+</body>
+</html>
